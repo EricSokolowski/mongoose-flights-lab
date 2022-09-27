@@ -6,6 +6,7 @@ const flightSchema = new Schema({
   airline: String,
   flightNum: Number,
   crew: [String],
+  availabeSeats: Boolean,
 },{
   timestamps: true
 })

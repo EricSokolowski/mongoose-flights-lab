@@ -9,14 +9,27 @@
   <p> <%= flight.flightNo %></p>
   <label> Departure Date</label>
   <p> <%= flight.departs %></p>
+  <label> Meal Choices</label>
+  <% flight.meals.forEach(meal => { %>
+    <p> <%=meal.name%></p>
+  <% }) %>
+  <label> Add Meal</label>
+  <form action="/flights/<%= flight._id %>/meals" method="POST">
+    <select name="mealId">
+      <% meals.forEach(meal => { %>
+        <option value="<%= meal._id %>"><%= meal.name%></option>
+      <% }) %>
+    </select>
+    <button type="submit">Add Meal</button>
+  </form>
   <label >Tickets </label>
   <% flight.tickets.forEach(ticket => { %>
     <p> <%=ticket.seat%> - $<%=ticket.price%> </p>
   <% }) %>
   <form action="/flights/<%=flight._id%>/ticket" method="POST">
-    <label>Seat</label>
+    <p>Seat</p>
     <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
-    <label>Price</label>
+    <p>Price</p>
     <input type="number" name="price">
     <button type="submit"> Add Ticket</button>
   </form>

@@ -1,0 +1,18 @@
+<%- include('../partials/html-head.ejs')%>
+<%- include('../partials/nav.ejs')%>
+
+  <h1><%= title %></h1>
+
+  <label>Airline</label>
+  <p> <%= flight.airline %></p>
+  
+  <label>Airport</label>
+  <p> <%= flight.airport %></p>
+  
+  <label>Flight Number</label>
+  <p> <%= flight.flightNo %></p>
+
+  <label> Departure Date</label>
+  <p> <%= flight.departs %></p>
+
+<%- include('../partials/footer.ejs') %>

@@ -18,6 +18,9 @@
         <td> <%=flight.flightNo%> </td>
         <td> <%=flight.departs%> </td>
         <td>
+          <form action="/flights/<%= flight._id%>" method="GET">
+            <button>DETAILS</button>
+          </form>
           <form action="/flights/<%= flight._id%>?_method=DELETE" method="POST">
             <button>X</button>
           </form>

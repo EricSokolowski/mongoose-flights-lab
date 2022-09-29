@@ -3,15 +3,11 @@
 <%- include('../partials/nav') %>
 <main>
   <h1><%= title %></h1>
-  <form id="new-form" action="" method="">
-    <label for="airline-input">Airline:</label>
-    <input type="text" name="airline" id="airline-input">
-    <label for="flight-number-input">Flight Number:</label>
-    <input type="text" name="flightNum" id="flight-number-input">
-    <label for="crew-input">Crew (separate the crew with commas):</label>
-    <input type="text" name="crew" id="crew-input">
-    <label for="available-seats-checkbox">Available Seats:</label>
-    <input type="checkbox" name="availableSeats" id="available-seats-checkbox" checked>
+  <form id="new-form" action="/flights" method="POST">
+    <label for="seat-input">Seat:</label>
+    <input type="text" name="seat" required pattern="[A-F][1-9]\d?" id="seat-input">
+    <label for="price-input">Price:</label>
+    <input type="text" name="price" id="price-input">
     <button type="submit">Add Flight</button>
   </form>
 </main>

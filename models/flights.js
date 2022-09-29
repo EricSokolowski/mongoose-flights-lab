@@ -3,10 +3,8 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const flightSchema = new Schema({
-  airline: String,
-  flightNum: Number,
-  crew: [String],
-  availabeSeats: Boolean,
+  seat:  {type: String, match: /[A-F][1-9]\d?/},
+  price: Number >= 0,
 },{
   timestamps: true
 })

@@ -9,6 +9,8 @@ router.get('/', function(req, res) {
 //GEt /flghts/new
 router.get('/new', flightsCtrl.new)
 
+
+router.post('/', moviesCtrl.create)
 export {
   router,
 }
